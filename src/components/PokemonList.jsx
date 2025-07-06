@@ -37,25 +37,25 @@ function PokemonList() {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto px-4 py-10">
+    <div className="flex flex-col items-center gap-y-4">
       {/* Search & Filter Centered */}
-      <div className="flex flex-col items-center gap-4 mb-10">
+      <div className="flex flex-col max-w-screen items-center gap-4 gap-y50">
         {/* Search */}
         <input
           type="text"
           placeholder="Search Pokémon..."
-          className="border border-black px-4 py-2 rounded-lg w-full max-w-md"
+          className="border border-black rounded-lg w-full max-w-md"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
         {/* Type Filter */}
-        <div className="flex flex-wrap justify-center gap-2">
+        <div className="flex flex-wrap justify-center gap-3">
           {allTypes.map((type) => (
             <button
               key={type}
               onClick={() => toggleType(type)}
-              className={`px-3 py-1 text-sm border-2 border-black rounded-md font-semibold ${
+              className={`px-3 py-8 text-sm border-2 border-black rounded-md font-semibold ${
                 typeFilter.includes(type)
                   ? "bg-black text-white"
                   : "bg-white text-black"
@@ -68,7 +68,7 @@ function PokemonList() {
       </div>
 
       {/* Pokémon Cards */}
-      <div className="flex flex-wrap justify-center gap-6">
+      <div className="flex flex-wrap justify-center gap-8">
         {filteredPokemon.map((pokemon) => (
           <PokemonItem
             key={pokemon.id}

@@ -18,8 +18,7 @@ function PokemonItem({ pokemon, hovered, setHoveredId, onClick }) {
       </div>
 
       <h2 className="text-xl font-bold mt-2">{pokemon.name}</h2>
-
-      <div className="flex justify-center gap-2 mt-2 flex-wrap">
+      <div className="flex justify-center gap-2 mt-2 mb-4 flex-wrap">
         {pokemon.types.map((type, i) => (
           <span
             key={i}
