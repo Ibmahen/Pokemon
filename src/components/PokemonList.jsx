@@ -55,11 +55,15 @@ function PokemonList() {
             <button
               key={type}
               onClick={() => toggleType(type)}
-              className={`px-3 py-8 text-sm border-2 border-black rounded-md font-semibold ${
-                typeFilter.includes(type)
-                  ? "bg-black text-white"
-                  : "bg-white text-black"
-              }`}
+              className={`
+                px-3 py-1 text-sm border-2 border-black rounded-md font-semibold
+                transition-colors duration-200 ease-in-out
+                ${
+                  typeFilter.includes(type)
+                  ? "bg-black text-white hover:bg-black hover:text-white" // Efek hover untuk yang aktif
+                  : "bg-white text-black hover:bg-black hover:text-white"// Efek hover untuk yang tidak aktif
+                }
+              `}
             >
               {type}
             </button>
